@@ -1,0 +1,132 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.main {
+    padding: 30px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden; 
+    z-index: 1; 
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 0.5s forwards, main-glow 3s infinite alternate;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes main-glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    20% {
+        box-shadow: 0 0 20px rgba(255, 127, 0, 0.5);
+    }
+    40% {
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+    }
+    60% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    }
+    80% {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(75, 0, 130, 0.5);
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+#led-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.led {
+    width: 7px;
+    height: 7px;
+    margin: 7px;
+    border-radius: 15%;
+    background-color: gray;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s;
+    animation: led-glow 3s infinite alternate;
+}
+
+@keyframes led-glow {
+    0% {
+        background-color: gray;
+        box-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+    }
+    20% {
+        box-shadow: 0 0 50px rgba(255, 127, 0, 0.5);
+    }
+    40% {
+        box-shadow: 0 0 50px rgba(255, 255, 0, 0.5);
+    }
+    60% {
+        box-shadow: 0 0 50px rgba(0, 255, 0, 0.5);
+    }
+    80% {
+        box-shadow: 0 0 50px rgba(0, 0, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 50px rgba(75, 0, 130, 0.5);
+    }
+}
+
+.checked {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.close {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00ff00;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #00cc00;
+    transform: scale(1.05);
+}
